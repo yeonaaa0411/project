@@ -103,36 +103,33 @@ CREATE TABLE IF NOT EXISTS tb_faculty (
   FOREIGN KEY (department_id) REFERENCES tb_department (department_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insert data into 'tb_admin' table
-INSERT INTO tb_admin (admin_name, admin_password) VALUES
-  ('Admin 1', 'admin1_password'),
-  ('Admin 2', 'admin2_password');
+-- Insert data into 'admin' table
+INSERT INTO admin(AdminID, AdminName, AdminPassword)
+VALUES (101, 'Francis Balazon','Francis101 '), (102, 'Alimoren Dioneces','Dioneces102 '), 
+(103, 'Richelle Sulit','Sulit103 '), (104, 'Ganiela Catapia','Ganiela104 '), (105, 'Lea Salonga','Lea105 ');
 
--- Insert data into 'tb_department' table
-INSERT INTO tb_department (department_name) VALUES
-  ('Department 1'),
-  ('Department 2');
+-- Insert data into 'department' table
+INSERT INTO department(DepartmentID, DepartmentName)
+VALUES (2202, 'CABE'), (2203, 'YPMAP'), (2201, 'CICS'), (2204, 'CICS'), (2205, 'CABE');
 
 -- Insert data into 'tb_event' table
-INSERT INTO tb_event (event_title, event_detail, event_date, department_id) VALUES
-  ('Event 1', 'Event 1 Details', '2023-10-25', 1),
-  ('Event 2', 'Event 2 Details', '2023-11-15', 2);
+INSERT INTO events(EventID, EventTitle, EventDetails, EventDate)
+VALUES (3101, 'SportFest','Gather Everyone','Oct 28 2023'),(3102, 'Night Fest','Gather Everyone','Oct 29 2023'),
+(3103, 'Valentines Day','Gather Everyone','Feb 14 2023'),(3104, 'CICS DAY','Gather Everyone','Dec 13 2023'), 
+(3105, 'Christmas Party','Gather Everyone','Dec 22 2023');
 
 -- Insert data into 'tb_students' table
-INSERT INTO tb_students (student_name, student_password, department_id) VALUES
-  ('Student 1', 'student1_password', 1),
-  ('Student 2', 'student2_password', 1);
+INSERT INTO students(SR_Code, StudentsName, StudentsPassword)
+VALUES (21-39305,'Marvin M. Cruz','secret2101'),(21-45325,'Kyla M. Pusag','2302asd'),(21-56323,'Mikko C uson','Pogi123'),
+(21-45242,'Verlon M Morales','AkolangtoMorales'),(21-63452,'Aeron M. Umali','aeronlangsakalam');
 
 -- Insert data into 'tb_rso' table
-INSERT INTO tb_rso (rso_name, rso_password, department_id) VALUES
-  ('RSO 1', 'rso1_password', 2),
-  ('RSO 2', 'rso2_password', 2);
+INSERT INTO rso(RsoID, RsoName, RsoPassword)
+VALUES (1101, 'CICS','1101CICS'),(1102, 'CABE','1101CABE'),(1103, 'YPMAP','1101YPMAP'),(1104, 'JPCS','1101JPCS'),(1105, 'CIT','1105CIT');
 
--- Insert data into 'tb_faculty' table
-INSERT INTO tb_faculty (faculty_name, faculty_password, department_id) VALUES
-  ('Faculty 1', 'faculty1_password', 1),
-  ('Faculty 2', 'faculty2_password', 2);
-
+-- Insert data into 'faculty' table
+INSERT INTO faculty(FacultyID, FacultyName, FacultyPassword)
+VALUES (01, 'CICS','01BSUCICS'),(02, 'CICS','02BSUCICS'),(03, 'CICS','03BSUCICS'),(04, 'CICS','04BSUCICS'),(05, 'CICS','05BSUCICS');
 
 -- Create the 'tb_attendees' table with separate columns for each role
 CREATE TABLE IF NOT EXISTS tb_attendees (
